@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Multiple Choose</title>
+    <style>
+       .container {
+            display: inline;
+            align-items: center;
+            gap: 10px;
+            
+        }
+
+        .container label {
+            margin-right: 10px;
+            display: inline;
+        }
+</style>
+</head>
+<body>
+ <div class="container">
+        
+        <label>Program1: Select multiple sport:</label>
+        <label><input type="checkbox" name="sports" value="Soccer"> Soccer</label>
+        <label><input type="checkbox" name="sports" value="Basketball"> Basketball</label>
+        <label><input type="checkbox" name="sports" value="Tennis"> Tennis</label>
+        
+        <button onclick="displaySelectedSports()">Display Selected Sports</button>
+        <p id="result1"></p>
+    </div>
+ 
+
+
+    <div class="container">
+        
+      <label>Program2: Select multiple vacation destinations:</label>
+      <label><input type="checkbox" name="destinations" value="Beach">Beach</label>
+      <label><input type="checkbox" name="destinations" value="Mountains">Mountains</label>
+      <label><input type="checkbox" name="destinations" value="City">City</label>
+      
+      <button onclick="displaySelectedDestinations()">Display Selected Destinations</button>
+      <p id="result2"></p>
+  </div>
+  
+
+
+  <div class="container">
+        
+    <label>Program3: Select multiple movie genres:</label>
+    <label><input type="checkbox" name="movie" value="Action">Action</label>
+    <label><input type="checkbox" name="movie" value="Comedy">Comedy</label>
+    <label><input type="checkbox" name="movie" value="Drama">Drama</label>
+    
+    <button onclick="displaySelectedMovie()">Display Selected Genres</button>
+    <p id="result3"></p>
+</div>
+
+
+
+<div class="container">
+        
+  <label>Program4: Select multiple items from a restaurant menu:</label>
+  <label><input type="checkbox" name="menu" value="Burger">Burger</label>
+  <label><input type="checkbox" name="menu" value="Pizza">Pizza</label>
+  <label><input type="checkbox" name="menu" value="Salad">Salad</label>
+  
+  <button onclick="displaySelectedMenu()">Display Selected Items</button>
+  <p id="result4"></p>
+</div>
+
+
+
+
+<div class="container">
+        
+  <label>Program5: Select multiple fruits:</label>
+  <label><input type="checkbox" name="fruits" value="Apple">Apple</label>
+  <label><input type="checkbox" name="fruits" value="Banana">Banana</label>
+  <label><input type="checkbox" name="fruits" value="Orange">Oranage</label>
+  
+  <button onclick="displaySelectedFruits()">Display Selected Fruits</button>
+  <p id="result5"></p>
+</div>
+<script>
+        function displaySelectedSports() {
+            const checkboxes = document.querySelectorAll('input[name="sports"]:checked');
+            let selectedSports = [];
+            checkboxes.forEach((checkbox) => {
+                selectedSports.push(checkbox.value);
+            });
+
+            const result1Div = document.getElementById('result1');
+            if (selectedSports.length > 0) {
+                result1Div.innerHTML = "Selected Sports: " + selectedSports.join(", ");
+            } else {
+                result1Div.innerHTML = "No sports selected";
+            }
+        }
+
+
+        function displaySelectedDestinations() {
+            const checkboxes = document.querySelectorAll('input[name="destinations"]:checked');
+            let selectedDestinations = [];
+            checkboxes.forEach((checkbox) => {
+                selectedDestinations.push(checkbox.value);
+            });
+
+            const result2Div = document.getElementById('result2');
+            if (selectedDestinations.length > 0) {
+                result2Div.innerHTML = "Selected Destinations: " + selectedDestinations.join(", ");
+            } else {
+                result2Div.innerHTML = "No destination selected";
+            }
+        }
+
+
+        function displaySelectedMovie() {
+            const checkboxes = document.querySelectorAll('input[name="movie"]:checked');
+            let selectedMovie = [];
+            checkboxes.forEach((checkbox) => {
+                selectedMovie.push(checkbox.value);
+            });
+
+            const result3Div = document.getElementById('result3');
+            if (selectedMovie.length > 0) {
+                result3Div.innerHTML = "Selected Movies: " + selectedMovie.join(", ");
+            } else {
+                result3Div.innerHTML = "No movie selected";
+            }
+        }
+
+
+        function displaySelectedMenu() {
+            const checkboxes = document.querySelectorAll('input[name="menu"]:checked');
+            let selectedMenu = [];
+            checkboxes.forEach((checkbox) => {
+                selectedMenu.push(checkbox.value);
+            });
+
+            const result4Div = document.getElementById('result4');
+            if (selectedMenu.length > 0) {
+                result4Div.innerHTML = "Selected Menu: " + selectedMenu.join(", ");
+            } else {
+                result4Div.innerHTML = "No item selected";
+            }
+        }
+
+
+        function displaySelectedFruits() {
+            const checkboxes = document.querySelectorAll('input[name="fruits"]:checked');
+            let selectedFruits = [];
+            checkboxes.forEach((checkbox) => {
+                selectedFruits.push(checkbox.value);
+            });
+
+            const result5Div = document.getElementById('result5');
+            if (selectedFruits.length > 0) {
+                result5Div.innerHTML = "Selected Fruits: " + selectedFruits.join(", ");
+            } else {
+                result5Div.innerHTML = "No fruit selected";
+            }
+        }
+    </script>
+
+
+</body>
+</html>
